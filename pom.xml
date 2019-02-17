@@ -7,7 +7,13 @@
   <groupId>pl.sda</groupId>
   <artifactId>library</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <packaging>war</packaging>
+  <modules>
+    <module>domain</module>
+    <module>persistance</module>
+    <module>service</module>
+    <module>web</module>
+  </modules>
+  <packaging>pom</packaging>
 
   <name>library Maven Webapp</name>
   <!-- FIXME change it to the project's website -->
