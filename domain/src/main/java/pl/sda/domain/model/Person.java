@@ -1,9 +1,14 @@
 package pl.sda.domain.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "Persons")
+@Getter
+@Setter
 public class Person {
     @Id
     @GeneratedValue
