@@ -5,7 +5,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-
     <title>Open library - your books</title>
     <link rel="stylesheet" href="/webjars/bootstrap/4.2.1/css/bootstrap.min.css">
 
