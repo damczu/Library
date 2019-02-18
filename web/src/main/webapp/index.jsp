@@ -7,6 +7,9 @@
 
     <title>Open library - your books</title>
     <link rel="stylesheet" href="/webjars/bootstrap/4.2.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="shortcut icon" type="image/png" href="https://image.flaticon.com/icons/png/512/167/167756.png"/>
 
 <body cz-shortcut-listen="true">
 <form class="card-body col-lg-4 m-auto">

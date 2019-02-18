@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="shortcut icon" type="image/png" href="https://image.flaticon.com/icons/png/512/167/167756.png"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style type="text/css">
@@ -342,6 +343,11 @@
             </ul>
         </div>
     </div>
+    <nav class="card-body navbar-text" >
+        <div class="container">
+            <b>ⓒ Open Library 2019</b>
+        </div>
+    </nav>
 </div>
 <!-- Add Modal HTML -->
 <div id="addBook" class="modal fade">
@@ -359,11 +365,12 @@
                     </div>
                     <div class="form-group">
                         <label>Author</label>
-                        <input type="email" class="form-control" required>
+                        <input type="text" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label>ISBN</label>
-                        <input type="email" class="form-control" required>
+                        <input type="text" pattern="[0-9]{13}" class="form-control" required>
+                        <p>Note: ISBN number contains 13 digits</p>
                     </div>
                     <div class="form-group">
                         <label>Category</label>
@@ -398,11 +405,12 @@
                     </div>
                     <div class="form-group">
                         <label>Author</label>
-                        <input type="email" class="form-control" required>
+                        <input type="text" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label>ISBN</label>
-                        <input type="email" class="form-control" required>
+                        <input type="text" pattern="[0-9]{13}" class="form-control" required>
+                        <p>Note: ISBN number contains 13 digits</p>
                     </div>
                     <div class="form-group">
                         <label>Category</label>
