@@ -14,7 +14,7 @@ public class BookRepository {
         this.session = HibernateUtil.getSession();
     }
 
-    public Integer update(Book book){
+    public Integer save(Book book){
         Transaction tx = session.beginTransaction();
         Integer bookId = (Integer) session.save(book);
         tx.commit();
