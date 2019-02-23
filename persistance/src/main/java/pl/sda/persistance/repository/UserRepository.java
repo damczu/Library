@@ -5,6 +5,8 @@ import org.hibernate.Transaction;
 import pl.sda.domain.model.User;
 import pl.sda.persistance.hibernate.HibernateUtil;
 
+import java.util.List;
+
 public class UserRepository {
     private final Session session;
 
@@ -35,4 +37,11 @@ public class UserRepository {
         tx.commit();
     }
 
+    public boolean loginExists(String login) {
+        List userList = session.createQuery("FROM User WHERE USR_Login = '" + login + "'").list();
+        if(userList.size() > 0){
+            return true;
+        }
+        return false;
+    }
 }
