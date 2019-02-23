@@ -1,0 +1,13 @@
+<header>
+    <div class="container">
+
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand">
+            <img src="https://image.flaticon.com/icons/png/512/167/167756.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        </a>
+            <div class="navbar-text d-inline-block mx-auto">
+                <b>OPEN LIBRARY</b>
+            </div>
+    </nav>
+    </div>
+</header>
