@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @Setter
 public class Book {
     @Id
-    @GeneratedValue
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     @Column(name = "BOK_Id")
     private int id;
     @Column(name = "BOK_Title")
