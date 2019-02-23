@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "Books")
@@ -23,4 +24,7 @@ public class Book {
     private LocalDate releaseDate;
     @Column(name = "BOK_Summary")
     private String summary;
+    @ManyToMany(mappedBy = "books")
+    private List<Author> authors;
+
 }
