@@ -17,10 +17,10 @@ public class Book {
     private int id;
     @Column(name = "BOK_Title")
     private String title;
-    @Column(name = "Bok_IsbnNumber")
+    @Column(name = "BOK_IsbnNumber")
     private String isbnNumber;
-    @Column(name = "Bok_ReleaseDate")
+    @Column(name = "BOK_ReleaseDate")
     private LocalDate releaseDate;
-    @Column(name = "Bok_Summary")
+    @Column(name = "BOK_Summary")
     private String summary;
 }

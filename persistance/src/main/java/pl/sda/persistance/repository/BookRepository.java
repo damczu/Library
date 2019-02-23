@@ -33,8 +33,13 @@ public class BookRepository {
 
     public List<Book> findAll(){
         return session
-                .createQuery("FROM Books")
+                .createQuery("FROM Book")
                 .list();
     }
 
+    public List<Book> findByIsbn(String isbnNumber) {
+        return session
+                .createQuery("FROM Book WHERE BOK_IsbnNumber = '" + isbnNumber + "'" )
+                .list();
+    }
 }
