@@ -31,7 +31,7 @@ public class UserService {
         User user = new User();
         user.setLogin(userAddDto.login);
         user.setPassword(userAddDto.password);
-        user.setPersonId(personId);
+        user.setPerson(personService.findByID(personId));
         user.setCreateDate(LocalDateTime.now());
 
         return userRepository.save(user);

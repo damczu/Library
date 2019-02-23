@@ -32,4 +32,8 @@ public class PersonService {
     public Integer addPerson(UserAddDto userAddDto) {
         return addPerson(userAddDto.firstName,userAddDto.lastName,userAddDto.phone,userAddDto.email);
     }
+
+    public Person findByID(Integer personId) {
+        return personRepository.findById(personId);
+    }
 }
