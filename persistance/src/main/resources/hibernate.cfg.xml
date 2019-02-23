@@ -20,6 +20,7 @@
         <mapping class="pl.sda.domain.model.User"/>
         <mapping class="pl.sda.domain.model.Person"/>
         <mapping class="pl.sda.domain.model.User"/>
-        <mapping class="pl.sda.domain.model.Book"/>
+        <mapping class="pl.sda.domain.model.Author"/>
+
     </session-factory>
 </hibernate-configuration>
