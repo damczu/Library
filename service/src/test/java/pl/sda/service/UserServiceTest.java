@@ -3,10 +3,11 @@ package pl.sda.service;
 import org.junit.Assert;
 import org.junit.Test;
 import pl.sda.service.exception.LoginExistsException;
+import pl.sda.service.exception.PersonDataNotCreatedException;
 
 public class UserServiceTest {
     @Test
-    public void shouldAddUser() throws LoginExistsException {
+    public void shouldAddUser() throws LoginExistsException, PersonDataNotCreatedException {
         //given
         UserService userService = new UserService();
         String login = "test";

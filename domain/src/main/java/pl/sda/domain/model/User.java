@@ -16,7 +16,7 @@ public class User {
     @Column(name = "USR_Id")
     private int id;
     @Column(name = "USR_PerId")
-    private int person_id;
+    private int personId;
     @Column(name = "USR_Login")
     private String login;
     @Column(name = "USR_Password")
