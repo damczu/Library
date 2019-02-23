@@ -5,22 +5,22 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-/*
+
 @Entity
 @Table(name = "Books")
 @Getter
-@Setter*/
+@Setter
 public class Book {
     @Id
-    @GeneratedValue
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     @Column(name = "BOK_Id")
     private int id;
     @Column(name = "BOK_Title")
     private String title;
-    @Column(name = "Bok_IsbnNumber")
+    @Column(name = "BOK_IsbnNumber")
     private String isbnNumber;
-    @Column(name = "Bok_ReleaseDate")
+    @Column(name = "BOK_ReleaseDate")
     private LocalDate releaseDate;
-    @Column(name = "Bok_Summary")
+    @Column(name = "BOK_Summary")
     private String summary;
 }

@@ -24,5 +24,8 @@ public class Person {
     private String phone;
     @Column(name = "PER_Email")
     private String email;
+    @OneToOne(mappedBy = "person")
+    private User user;
+
 
 }

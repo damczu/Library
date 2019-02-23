@@ -15,6 +15,10 @@ public class PersonRepository {
         this.session = HibernateUtil.getSession();
     }
 
+    public Person findById(Integer personId) {
+        return session.get(Person.class, personId);
+    }
+
     public Integer save(Person person){
         Transaction tx = session.beginTransaction();
         Integer resultId = (Integer) session.save(person);

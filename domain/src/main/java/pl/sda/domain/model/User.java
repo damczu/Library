@@ -15,8 +15,9 @@ public class User {
     @GeneratedValue
     @Column(name = "USR_Id")
     private int id;
-    @Column(name = "USR_PerId")
-    private int personId;
+    @OneToOne
+    @JoinColumn(name = "USR_PerId")
+    private Person person;
     @Column(name = "USR_Login")
     private String login;
     @Column(name = "USR_Password")
