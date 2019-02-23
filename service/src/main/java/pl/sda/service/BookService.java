@@ -9,12 +9,14 @@ import java.util.List;
 
 public class BookService {
     private final BookRepository bookRepository;
+    private final AuthorService authorService;
 
-    public BookService(BookRepository bookRepository) {
+    public BookService(BookRepository bookRepository, AuthorService authorService) {
         this.bookRepository = bookRepository;
+        this.authorService = authorService;
     }
 
-    public Integer addBook(String title, String isbnNumber, LocalDate releaseDate, String summary) throws BookAlreadyExistsException {
+    public Integer addBook(String title, String isbnNumber, LocalDate releaseDate, String summary,List<Integer> authors) throws BookAlreadyExistsException {
         if(isbnExists(isbnNumber)) {
             throw new BookAlreadyExistsException(title, isbnNumber);
         }
@@ -23,6 +25,8 @@ public class BookService {
         book.setIsbnNumber(isbnNumber);
         book.setReleaseDate(releaseDate);
         book.setSummary(summary);
+
+        book.setAuthors(authorService.findAuthors(authors));
 
         return bookRepository.save(book);
     }

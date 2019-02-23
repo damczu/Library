@@ -3,6 +3,8 @@ package pl.sda.service;
 import pl.sda.domain.model.Author;
 import pl.sda.persistance.repository.AuthorRepository;
 
+import java.util.List;
+
 public class AuthorService {
     private final AuthorRepository authorRepository;
 
@@ -19,4 +21,7 @@ public class AuthorService {
     }
 
 
+    public List<Author> findAuthors(List<Integer> authors) {
+        return authorRepository.findAuthorsByIdList(authors);
+    }
 }

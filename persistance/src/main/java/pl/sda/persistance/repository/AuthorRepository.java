@@ -5,6 +5,9 @@ import org.hibernate.Transaction;
 import pl.sda.domain.model.Author;
 import pl.sda.persistance.hibernate.HibernateUtil;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class AuthorRepository {
     private final Session session;
 
@@ -19,4 +22,13 @@ public class AuthorRepository {
         return authorId;
     }
 
+    public List<Author> findAuthorsByIdList(List<Integer> authors) {
+//        String idList = authors.stream()
+//                .map(i -> i.toString())
+//                .collect(Collectors.joining(", "));
+
+        return session.byMultipleIds("Author.class")
+                .multiLoad(authors);
+
+    }
 }
