@@ -23,7 +23,6 @@ public class PersonService {
             person.setPhone(phone);
             person.setEmail(email);
 
-            PersonRepository personRepository = new PersonRepository();
             Integer save = personRepository.save(person);
             return save;
         }
