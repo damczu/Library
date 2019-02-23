@@ -10,7 +10,7 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 public class HibernateUtil {
     private static StandardServiceRegistry registry;
     private static SessionFactory sessionFactory;
-    private static Session session;
+    private static Session session = null;
 
     public static SessionFactory getSessionFactory() {
         if (sessionFactory == null) {
@@ -41,7 +41,7 @@ public class HibernateUtil {
 
     public static Session getSession() {
         if(session == null){
-            Session session = HibernateUtil
+            session = HibernateUtil
                     .getSessionFactory()
                     .openSession();
         }
