@@ -18,21 +18,26 @@
         <h1 class="h3 mb-3 font-weight-normal">Open library</h1>
     </div>
 
-    <div class="form-label-group">
-        <input type="email" id="inputLogin" class="form-control" placeholder="Login" required="" autofocus="">
+    <div class="form-label-group mt-2">
         <label for="inputLogin">Login</label>
+        <input type="text" id="inputLogin" class="form-control" placeholder="Login" required="" autofocus="">
     </div>
 
-    <div class="form-label-group">
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+    <div class="form-label-group mt-2">
         <label for="inputPassword">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
     </div>
 
-    <div class="checkbox mb-3">
+    <div class="checkbox mb-0">
         <label>
             <input type="checkbox" value="remember-me"> Remember me
         </label>
     </div>
+
+    <div class="form-control-plaintext mb-3">
+        New user? Register <a href="registerPage.jsp">here</a>
+    </div>
+
     <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
 </form>
 
