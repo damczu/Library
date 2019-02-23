@@ -1,6 +1,7 @@
 package pl.sda.service;
 
 import pl.sda.domain.model.Person;
+import pl.sda.domain.model.dto.UserAddDto;
 import pl.sda.persistance.repository.PersonRepository;
 
 import java.util.List;
@@ -27,5 +28,9 @@ public class PersonService {
             return save;
         }
         return personsWithSameEmail.get(0).getId();
+    }
+
+    public Integer addPerson(UserAddDto userAddDto) {
+        return addPerson(userAddDto.firstName,userAddDto.lastName,userAddDto.phone,userAddDto.email);
     }
 }
