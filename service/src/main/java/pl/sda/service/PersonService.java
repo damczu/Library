@@ -23,8 +23,8 @@ public class PersonService {
             person.setPhone(phone);
             person.setEmail(email);
 
-            Integer save = personRepository.save(person);
-            return save;
+            Integer personId = personRepository.save(person);
+            return personId;
         }
         return personsWithSameEmail.get(0).getId();
     }
