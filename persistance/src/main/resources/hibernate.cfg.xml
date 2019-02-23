@@ -6,13 +6,15 @@
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://remotemysql.com/u9s66s7fNU:3306</property>
+        <property name="hibernate.connection.url">jdbc:mysql://remotemysql.com/u9s66s7fNU</property>
         <property name="hibernate.connection.username">u9s66s7fNU</property>
         <property name="hibernate.connection.password">b3EmrZV2If</property>
-        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL55Dialect</property>
 
         <property name="show_sql">true</property>
         <property name="hibernate.id.new_generator_mappings">false</property>
+
+        <property name="hibernate.hbm2ddl.auto">update</property>
 
         <mapping class="pl.sda.domain.model.Book"/>
         <mapping class="pl.sda.domain.model.User"/>
