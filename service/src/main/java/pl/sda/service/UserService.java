@@ -5,7 +5,6 @@ import pl.sda.domain.model.User;
 import pl.sda.persistance.hibernate.HibernateUtil;
 import pl.sda.persistance.repository.UserRepository;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class UserService {
