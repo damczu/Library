@@ -12,5 +12,8 @@ public class BookRepository {
         this.book = book;
     }
 
+    public Integer update(){
+        return(Integer) session.save(book);
+    }
 
 }
