@@ -10,4 +10,8 @@ public abstract class GeneralRepository <T, K>{
         this.session = session;
         this.entityClass = entityClass;
     }
+
+    public Integer save(T object){
+        return (Integer) session.save(object);
+    }
 }
