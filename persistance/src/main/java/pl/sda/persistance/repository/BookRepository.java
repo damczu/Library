@@ -10,7 +10,7 @@ import java.util.List;
 public class BookRepository {
     private final Session session;
 
-    public BookRepository(Session session){
+    public BookRepository(){
         this.session = HibernateUtil.getSession();
     }
 
