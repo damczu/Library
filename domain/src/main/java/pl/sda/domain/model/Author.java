@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "Authors")
@@ -18,4 +19,10 @@ public class Author {
     private String firstName;
     @Column(name = "AUT_LastName")
     private String lastName;
+    @ManyToMany
+    @JoinTable(name = "AuthorsBooks",
+            joinColumns = {@JoinColumn(name = "AUB_AutId", referencedColumnName = "AUT_Id")},
+            inverseJoinColumns = {@JoinColumn(name = "AUB_BokId", referencedColumnName = "BOK_Id")}
+    )
+    List<Book> books;
 }

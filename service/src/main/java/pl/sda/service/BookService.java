@@ -1,20 +1,26 @@
 package pl.sda.service;
 
+import BookDtoFactory.BookDtoFactory;
 import pl.sda.domain.model.Book;
+import pl.sda.domain.model.dto.BookDto;
 import pl.sda.persistance.repository.BookRepository;
 import pl.sda.service.exception.BookAlreadyExistsException;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.stream.Collectors;
 
-public class BookService {
+public class BookService implements BookServiceInterface {
     private final BookRepository bookRepository;
+    private final AuthorService authorService;
 
-    public BookService(BookRepository bookRepository) {
+    public BookService(BookRepository bookRepository, AuthorService authorService) {
         this.bookRepository = bookRepository;
+        this.authorService = authorService;
     }
 
-    public Integer addBook(String title, String isbnNumber, LocalDate releaseDate, String summary) throws BookAlreadyExistsException {
+    @Override
+    public Integer addBook(String title, String isbnNumber, LocalDate releaseDate, String summary,List<Integer> authors) throws BookAlreadyExistsException {
         if(isbnExists(isbnNumber)) {
             throw new BookAlreadyExistsException(title, isbnNumber);
         }
@@ -23,6 +29,8 @@ public class BookService {
         book.setIsbnNumber(isbnNumber);
         book.setReleaseDate(releaseDate);
         book.setSummary(summary);
+
+        book.setAuthors(authorService.findAuthors(authors));
 
         return bookRepository.save(book);
     }
@@ -33,5 +41,24 @@ public class BookService {
             return true;
         }
         return false;
+    }
+
+    public Integer count(){
+        return bookRepository.count();
+    }
+
+    private List<Book> getOffset(int offset, int limit){
+        return bookRepository.findByOffset(offset, limit);
+    }
+
+    private List<BookDto> getBooksDto(List<Book> books){
+        return books.stream()
+                .map(x -> new BookDtoFactory().create(x))
+                .collect(Collectors.toList());
+    }
+
+    public List<BookDto> getBooksDtoWithOffset(int offset, int limit){
+        List<Book> books = getOffset(offset, limit);
+        return getBooksDto(books);
     }
 }

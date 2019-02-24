@@ -5,6 +5,8 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "Books")
@@ -23,4 +25,12 @@ public class Book {
     private LocalDate releaseDate;
     @Column(name = "BOK_Summary")
     private String summary;
+    @ManyToMany(mappedBy = "books")
+    private List<Author> authors;
+
+    public String getAuthorNames() {
+        return authors.stream()
+                .map(x -> x.getFirstName() + " " + x.getLastName())
+                .collect(Collectors.joining(","));
+    }
 }

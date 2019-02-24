@@ -2,9 +2,15 @@ package pl.sda.persistance.repository;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.boot.internal.SessionFactoryBuilderImpl;
+import org.hibernate.criterion.Projections;
+import org.hibernate.query.Query;
 import pl.sda.domain.model.Book;
 import pl.sda.persistance.hibernate.HibernateUtil;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import java.util.List;
 
 public class BookRepository {
@@ -41,5 +47,14 @@ public class BookRepository {
         return session
                 .createQuery("FROM Book WHERE BOK_IsbnNumber = '" + isbnNumber + "'" )
                 .list();
+    }
+
+    public Integer count() {
+        return ((Integer) session.createQuery("select count(*) from Book").uniqueResult()).intValue();
+    }
+
+    public List<Book> findByOffset(int offset, int limit) {
+        return session.createQuery("FROM Books OFFSET " + offset + "LIMIT " + limit).list();
+
     }
 }
