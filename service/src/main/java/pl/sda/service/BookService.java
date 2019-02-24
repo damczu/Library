@@ -7,7 +7,7 @@ import pl.sda.service.exception.BookAlreadyExistsException;
 import java.time.LocalDate;
 import java.util.List;
 
-public class BookService {
+public class BookService implements BookServiceInterface {
     private final BookRepository bookRepository;
     private final AuthorService authorService;
 
@@ -16,6 +16,7 @@ public class BookService {
         this.authorService = authorService;
     }
 
+    @Override
     public Integer addBook(String title, String isbnNumber, LocalDate releaseDate, String summary,List<Integer> authors) throws BookAlreadyExistsException {
         if(isbnExists(isbnNumber)) {
             throw new BookAlreadyExistsException(title, isbnNumber);
@@ -37,5 +38,9 @@ public class BookService {
             return true;
         }
         return false;
+    }
+
+    public Integer count(){
+        return bookRepository.count();
     }
 }
