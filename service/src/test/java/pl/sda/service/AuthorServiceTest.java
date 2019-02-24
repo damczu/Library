@@ -10,7 +10,7 @@ public class AuthorServiceTest {
         //given
         String firstName = "Stephen";
         String lastName = "King";
-        AuthorService authorService = new AuthorService(new AuthorRepository());
+        AuthorService authorService = new AuthorService();
         //when
         Integer authorId = authorService.addAuthor(firstName, lastName);
         //then

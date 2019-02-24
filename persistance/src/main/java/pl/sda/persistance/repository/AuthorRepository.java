@@ -29,6 +29,5 @@ public class AuthorRepository {
 
         return session.byMultipleIds("Author.class")
                 .multiLoad(authors);
-
     }
 }

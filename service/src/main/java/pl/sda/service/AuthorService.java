@@ -8,8 +8,8 @@ import java.util.List;
 public class AuthorService {
     private final AuthorRepository authorRepository;
 
-    public AuthorService(AuthorRepository authorRepository) {
-        this.authorRepository = authorRepository;
+    public AuthorService() {
+        this.authorRepository = new AuthorRepository();
     }
 
     public Integer addAuthor(String firstName, String lastName){
