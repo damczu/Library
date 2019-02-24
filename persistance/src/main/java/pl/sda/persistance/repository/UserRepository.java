@@ -46,7 +46,7 @@ public class UserRepository {
     }
 
     public boolean login(String login, char[] password) {
-        List userList = session.createQuery("FROM User WHERE login = '" + login + "' AND password = '" + password.toString() + "'").list();
+        List userList = session.createQuery("FROM User WHERE login = '" + login + "' AND password = '" + String.valueOf(password)+ "'").list();
 
         if(userList.size() > 0){
             return true;
