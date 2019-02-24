@@ -47,13 +47,18 @@ public class BookService implements BookServiceInterface {
         return bookRepository.count();
     }
 
-    public List<Book> getOffset(int offset, int limit){
+    private List<Book> getOffset(int offset, int limit){
         return bookRepository.findByOffset(offset, limit);
     }
 
-    public List<BookDto> getBooksDto(List<Book> books){
+    private List<BookDto> getBooksDto(List<Book> books){
         return books.stream()
                 .map(x -> new BookDtoFactory().create(x))
                 .collect(Collectors.toList());
+    }
+
+    public List<BookDto> getBooksDtoWithOffset(int offset, int limit){
+        List<Book> books = getOffset(offset, limit);
+        return getBooksDto(books);
     }
 }
