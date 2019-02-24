@@ -307,9 +307,7 @@
                 <td>84024089204802</td>
                 <td>Romance</td>
                 <td>
-                    <a href="#editBook" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                    <a href="#deleteBook" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                    <%--<a href="#showBook" class="show" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Show">remove_red_eye</i></a>--%>
+                    <%@include file="WEB-INF/fragments/icons.jspf"%>
                 </td>
             </tr>
             <tr>
@@ -324,8 +322,7 @@
                 <td>84024089204802</td>
                 <td>Action</td>
                 <td>
-                    <a href="#editBook" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                    <a href="#deleteBook" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                    <%@include file="WEB-INF/fragments/icons.jspf"%>
                 </td>
             </tr>
 

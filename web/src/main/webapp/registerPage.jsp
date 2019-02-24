@@ -21,7 +21,7 @@
 </style>
 
 <body cz-shortcut-listen="true">
-<form class="card-body col-lg-4 mx-auto" method="post">
+<form class="card-body col-lg-4 mx-auto" action="/RegisterServlet" method="post">
     <div class="text-center mb-4">
         <img class="mb-4" src="https://image.flaticon.com/icons/png/512/167/167756.png" alt="" width="72" height="72">
         <h1 class="h3 mb-3 font-weight-normal">Create account</h1>
@@ -29,33 +29,33 @@
     <div class="form-row">
         <div class="form-group col-md-6">
             <label for="inputLogin">Login</label>
-            <input type="text" class="form-control" id="inputLogin" placeholder="Login" required>
+            <input type="text" class="form-control" id="inputLogin" name="login" placeholder="Login" required>
         </div>
         <div class="form-group col-md-6">
             <label for="inputPassword">Password</label>
-            <input type="password" class="form-control" id="inputPassword" placeholder="Password" required>
+            <input type="password" class="form-control" id="inputPassword" name="password" placeholder="Password" required>
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-6">
             <label for="inputFirstName">First name</label>
-            <input type="text" class="form-control" id="inputFirstName" placeholder="Your name" required>
+            <input type="text" class="form-control" id="inputFirstName" name="firstName" placeholder="Your name" required>
         </div>
 
         <div class="form-group col-md-6">
-            <label for="inputLastName">First name</label>
-            <input type="text" class="form-control" id="inputLastName" placeholder="Your last name" required>
+            <label for="inputLastName">Last name</label>
+            <input type="text" class="form-control" id="inputLastName" name="lastName" placeholder="Your last name" required>
         </div>
     </div>
     <div class="form-group">
         <label for="inputEmail">Email</label>
-        <input type="email" class="form-control" id="inputEmail" placeholder="Email" required>
+        <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Email" required>
     </div>
     <div class="form-group">
         <label for="inputPhone">Phone</label>
-        <input type="text" class="form-control" id="inputPhone" placeholder="Phone number" required>
+        <input type="text" class="form-control" id="inputPhone" name="phone" placeholder="Phone number" required>
     </div>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+    <button class="btn btn-lg btn-primary btn-block mt-4" type="submit">Register</button>
 </form>
 </body>
 </html>
