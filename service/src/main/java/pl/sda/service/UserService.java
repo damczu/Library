@@ -35,5 +35,10 @@ public class UserService {
         user.setCreateDate(LocalDateTime.now());
 
         return userRepository.save(user);
-}
+    }
+
+    public boolean loginUser(String login, char[] password){
+        return userRepository.login(login,password);
+
+    }
 }

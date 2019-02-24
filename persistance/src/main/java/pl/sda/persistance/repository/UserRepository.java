@@ -44,4 +44,13 @@ public class UserRepository {
         }
         return false;
     }
+
+    public boolean login(String login, char[] password) {
+        List userList = session.createQuery("FROM User WHERE USR_Login = " + login + " AND USR_Password = " + password).list();
+
+        if(userList.size() > 0){
+            return true;
+        }
+        return false;
+    }
 }
