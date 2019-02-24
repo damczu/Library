@@ -1,4 +1,4 @@
-package BookDtoFactory;
+package pl.sda.domain.model.dto;
 
 import pl.sda.domain.model.Book;
 import pl.sda.domain.model.dto.BookDto;
