@@ -307,11 +307,7 @@
                 <td>84024089204802</td>
                 <td>Romance</td>
                 <td>
-                    <div class="custom-radio">
-                        <input class="form-check-input" type="radio" name="radios" id="radios1" value="option1">
-                        <label class="form-check-label" for="radios1">
-                        </label>
-                    </div>
+                    <%@include file="WEB-INF/fragments/radioButton.jspf"%>
                 </td>
             </tr>
             <tr>
@@ -320,11 +316,7 @@
                 <td>84024089204802</td>
                 <td>Action</td>
                 <td>
-                    <div class="custom-radio">
-                        <input class="form-check-input" type="radio" name="radios" id="radios2" value="option2">
-                        <label class="form-check-label" for="radios2">
-                        </label>
-                    </div>
+                    <%@include file="WEB-INF/fragments/radioButton.jspf"%>
                 </td>
             </tr>
 
