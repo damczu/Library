@@ -23,14 +23,17 @@ public class PersonService {
             person.setPhone(phone);
             person.setEmail(email);
 
-            PersonRepository personRepository = new PersonRepository();
-            Integer save = personRepository.save(person);
-            return save;
+            Integer personId = personRepository.save(person);
+            return personId;
         }
         return personsWithSameEmail.get(0).getId();
     }
 
     public Integer addPerson(UserAddDto userAddDto) {
         return addPerson(userAddDto.firstName,userAddDto.lastName,userAddDto.phone,userAddDto.email);
+    }
+
+    public Person findByID(Integer personId) {
+        return personRepository.findById(personId);
     }
 }
