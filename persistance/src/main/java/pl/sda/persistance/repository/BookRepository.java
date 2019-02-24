@@ -45,7 +45,7 @@ public class BookRepository {
 
     public List<Book> findByIsbn(String isbnNumber) {
         return session
-                .createQuery("FROM Book WHERE BOK_IsbnNumber = '" + isbnNumber + "'" )
+                .createQuery("FROM Book WHERE isbnNumber = '" + isbnNumber + "'" )
                 .list();
     }
 

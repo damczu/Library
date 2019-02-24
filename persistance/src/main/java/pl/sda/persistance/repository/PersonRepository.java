@@ -44,7 +44,7 @@ public class PersonRepository {
 
     public List<Person> findByEmail(String email) {
 
-        return session.createQuery("FROM Person WHERE PER_Email = '" + email + "'").list();
+        return session.createQuery("FROM Person WHERE email = '" + email + "'").list();
 
     }
 }

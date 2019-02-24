@@ -38,7 +38,7 @@ public class UserRepository {
     }
 
     public boolean loginExists(String login) {
-        List userList = session.createQuery("FROM User WHERE USR_Login = '" + login + "'").list();
+        List userList = session.createQuery("FROM User WHERE login = '" + login + "'").list();
         if(userList.size() > 0){
             return true;
         }
@@ -46,7 +46,7 @@ public class UserRepository {
     }
 
     public boolean login(String login, char[] password) {
-        List userList = session.createQuery("FROM User WHERE USR_Login = " + login + " AND USR_Password = " + password).list();
+        List userList = session.createQuery("FROM User WHERE login = " + login + " AND password = " + password).list();
 
         if(userList.size() > 0){
             return true;
