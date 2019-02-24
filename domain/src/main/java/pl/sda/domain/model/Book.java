@@ -27,6 +27,9 @@ public class Book {
     private String summary;
     @ManyToMany(mappedBy = "books")
     private List<Author> authors;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "BOK_Category")
+    private Category category;
 
     public String getAuthorNames() {
         return authors.stream()

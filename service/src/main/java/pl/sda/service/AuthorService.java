@@ -24,4 +24,8 @@ public class AuthorService {
     public List<Author> findAuthors(List<Integer> authors) {
         return authorRepository.findAuthorsByIdList(authors);
     }
+
+    public Integer addAuthor(String author) {
+        return null;
+    }
 }

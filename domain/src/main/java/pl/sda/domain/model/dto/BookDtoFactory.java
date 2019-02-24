@@ -10,6 +10,7 @@ public class BookDtoFactory {
         bookDto.title = book.getTitle();
         bookDto.isbn = book.getIsbnNumber();
         bookDto.author = book.getAuthorNames();
+        bookDto.category = book.getCategory();
 
         return bookDto;
     }
