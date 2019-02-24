@@ -56,13 +56,4 @@ public class BookService implements BookServiceInterface {
                 .map(x -> new BookDtoFactory().create(x))
                 .collect(Collectors.toList());
     }
-
-//    private BookDto convertToDto(Book book) {
-//        BookDto bookDto = new BookDto();
-//        bookDto.title = book.getTitle();
-//        bookDto.isbn = book.getIsbnNumber();
-//        bookDto.author = book.getAuthorNames();
-//
-//        return bookDto;
-//    }
 }
