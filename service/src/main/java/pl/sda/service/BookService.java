@@ -1,11 +1,14 @@
 package pl.sda.service;
 
+import BookDtoFactory.BookDtoFactory;
 import pl.sda.domain.model.Book;
+import pl.sda.domain.model.dto.BookDto;
 import pl.sda.persistance.repository.BookRepository;
 import pl.sda.service.exception.BookAlreadyExistsException;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class BookService implements BookServiceInterface {
     private final BookRepository bookRepository;
@@ -43,4 +46,23 @@ public class BookService implements BookServiceInterface {
     public Integer count(){
         return bookRepository.count();
     }
+
+    public List<Book> getOffset(int offset, int limit){
+        return bookRepository.findByOffset(offset, limit);
+    }
+
+    public List<BookDto> getBooksDto(List<Book> books){
+        return books.stream()
+                .map(x -> new BookDtoFactory().create(x))
+                .collect(Collectors.toList());
+    }
+
+//    private BookDto convertToDto(Book book) {
+//        BookDto bookDto = new BookDto();
+//        bookDto.title = book.getTitle();
+//        bookDto.isbn = book.getIsbnNumber();
+//        bookDto.author = book.getAuthorNames();
+//
+//        return bookDto;
+//    }
 }

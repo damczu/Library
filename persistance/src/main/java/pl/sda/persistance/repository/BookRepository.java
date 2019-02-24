@@ -50,7 +50,11 @@ public class BookRepository {
     }
 
     public Integer count() {
-        Query query = session.createQuery("select count(*) from Book");
-        return ((Integer) query.uniqueResult()).intValue();
+        return ((Integer) session.createQuery("select count(*) from Book").uniqueResult()).intValue();
+    }
+
+    public List<Book> findByOffset(int offset, int limit) {
+        return session.createQuery("FROM Books OFFSET " + offset + "LIMIT " + limit).list();
+
     }
 }
