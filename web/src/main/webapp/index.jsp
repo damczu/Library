@@ -21,18 +21,18 @@
 </style>
 
 <body cz-shortcut-listen="true">
-<form class="card-body col-lg-4 m-auto">
+<form class="card-body col-lg-4 m-auto" action="/LoginServlet" method="post">
     <div class="text-center mb-4">
         <img class="mb-4" src="https://image.flaticon.com/icons/png/512/167/167756.png" alt="" width="72" height="72">
         <h1 class="h3 mb-3 font-weight-normal"><b>OPEN LIBRARY</b></h1>
     </div>
     <div class="form-label-group mt-2">
         <label for="inputLogin">Login</label>
-        <input type="text" id="inputLogin" class="form-control" placeholder="Login" required="" autofocus="">
+        <input type="text" id="inputLogin" class="form-control" name="login" placeholder="Login" required="" autofocus="">
     </div>
     <div class="form-label-group mt-2">
         <label for="inputPassword">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+        <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" required="">
     </div>
     <div class="checkbox mb-0">
         <label>

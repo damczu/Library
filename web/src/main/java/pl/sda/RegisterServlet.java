@@ -13,13 +13,13 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet(urlPatterns = "/registerPage")
+@WebServlet(urlPatterns = "/RegisterServlet")
 public class RegisterServlet extends HttpServlet {
     private final UserService userService = new UserService();
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession httpSession = request.getSession(true);
         httpSession.setAttribute("USER", newUser(request));
-        request.getRequestDispatcher("/userPage.jsp").include(request, response);
+        request.getRequestDispatcher("/userPage.jsp").forward(request, response);
     }
 
     private Integer newUser(HttpServletRequest httpRequest) {
